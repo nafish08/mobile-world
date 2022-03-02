@@ -78,3 +78,8 @@
 .details_text {
   word-wrap: break-word;
 }
+
+.error_image {
+  width: 100px;
+  padding-bottom: 20px;
+}

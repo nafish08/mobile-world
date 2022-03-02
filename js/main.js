@@ -7,7 +7,10 @@ const searchButton = () => {
 
   //condition executes when search button press with empty value
   if (searchText == "") {
-    errorText.innerText = "Please Enter Value In The Search Box!!!";
+    errorText.innerHTML = `
+          <img src="img/error.png" class="error_image">
+          <h2 id="error-text" class="text-danger text-center">Please Enter Value In The Search Box!!!</h2>
+          `;
     inputValue.value = "";
     searchResults.innerHTML = "";
   } else {
@@ -23,7 +26,10 @@ const searchButton = () => {
         }
         //condition executes when data not found in the API
         else {
-          errorText.innerText = "Data not found";
+          errorText.innerHTML = `
+          <img src="img/error.png" class="error_image">
+          <h2 id="error-text" class="text-danger text-center">Data not found</h2>
+          `;
         }
       });
 
