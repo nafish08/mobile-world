@@ -47,7 +47,7 @@ const phonesDisplay = (phoneDatas) => {
       div.classList.add("mb-3");
       div.classList.add("card-group");
       div.innerHTML = `
-                          <div class="card">
+                          <div class="card border-0 rounded-3 card_style">
                               <img src="${phoneData.image}" class="m-3 img-fluid" alt="...">
                               <div class="card-body">
                                   <h5 class="card-title">${phoneData.phone_name}</h5>
