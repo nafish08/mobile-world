@@ -7,13 +7,47 @@ const searchButton = () => {
 
   //condition executes when search button press with empty value
   if (searchText == "") {
+    document.getElementById("pagination-btn").innerHTML = "";
     errorText.innerHTML = `
           <img src="img/error.png" class="error_image">
-          <h2 id="error-text" class="text-danger text-center">Please Enter Value In The Search Box!!!</h2>
+          <h2 id="error-text" class="text-danger text-center mb-4">Please Enter Value In The Search Box!!!</h2>
           `;
     inputValue.value = "";
     searchResults.innerHTML = "";
   } else {
+    document.getElementById("pagination-btn").innerHTML = `
+                                                            <div style="text-align: center">
+                                                                  <input
+                                                                    type="button"
+                                                                    id="first"
+                                                                    class="btn_style"
+                                                                    onclick="getFirstPage()"
+                                                                    value="first"
+                                                                  />
+                                                                  <input
+                                                                    type="button"
+                                                                    id="next"
+                                                                    class="btn_style"
+                                                                    onclick="getNextPage()"
+                                                                    value="next"
+                                                                  />
+                                                                  <input
+                                                                    type="button"
+                                                                    id="previous"
+                                                                    class="btn_style"
+                                                                    onclick="getPreviousPage()"
+                                                                    value="previous"
+                                                                  />
+                                                                  <input
+                                                                    type="button"
+                                                                    id="last"
+                                                                    class="btn_style"
+                                                                    onclick="getLastPage()"
+                                                                    value="last"
+                                                                  />
+                                                                  <div id="countList"></div>
+                                                                </div>
+                                                            `;
     searchResults.innerHTML = "";
     fetch(
       `https://openapi.programming-hero.com/api/phones?search=${searchText}`
@@ -26,9 +60,10 @@ const searchButton = () => {
         }
         //condition executes when data not found in the API
         else {
+          document.getElementById("pagination-btn").innerHTML = "";
           errorText.innerHTML = `
           <img src="img/error.png" class="error_image">
-          <h2 id="error-text" class="text-danger text-center">Data not found</h2>
+          <h2 id="error-text" class="text-danger text-center mb-4">Data not found</h2>
           `;
         }
       });
