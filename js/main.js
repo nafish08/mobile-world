@@ -15,6 +15,7 @@ const searchButton = () => {
     inputValue.value = "";
     searchResults.innerHTML = "";
   } else {
+    document.getElementById("landing-img").innerHTML = "";
     document.getElementById("pagination-btn").innerHTML = `
                                                             <div style="text-align: center">
                                                                   <input
