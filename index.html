@@ -14,29 +14,35 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <!-- Boxicons Icons -->
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+    <style>
+      .search_style:focus {
+        border: 3px solid #ee5100;
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg_color">
     <!-- Header start -->
     <header class="container">
       <!-- Top Text -->
-      <section>
-        <h2 class="text-center my-4">Find Your Desired Phones</h2>
+      <section class="container">
+        <!-- <h2 class="text-center my-4">Find Your Desired Phones</h2> -->
+        <p class="text-center top_text">
+          <span class="top_text_part">Mobile World</span>
+        </p>
       </section>
       <!-- For search -->
-      <section class="mb-5">
+      <section class="container mb-5">
         <div class="d-flex">
           <input
             id="input-value"
-            class="form-control me-2"
+            class="form-control me-2 search_style"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
-          <button
-            onclick="searchButton()"
-            class="btn btn-outline-success"
-            type="submit"
-          >
+          <button onclick="searchButton()" class="btn_style" type="submit">
             Search
           </button>
         </div>
@@ -53,6 +59,15 @@
         <div id="search-results" class="row"></div>
       </section>
     </main>
+
+    <!-- Footer start -->
+    <footer class="footer_style position-fixed mt-5">
+      <div class="m-3">
+        <p class="footer_text text-light text-center">
+          &copy; 2022 Md. Nafish Sadik
+        </p>
+      </div>
+    </footer>
 
     <!-- Custom JavaScript   -->
     <script src="js/main.js"></script>

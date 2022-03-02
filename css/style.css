@@ -1,3 +1,71 @@
-.card_style {
-  box-shadow: 10px 10px 31px #b3b3b3, -10px -10px 31px #ffffff;
+/* Utilities */
+.bg_color {
+  background-color: #282829;
+}
+
+/* Top Text Animation */
+.top_text {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  padding: 1.5em 0em;
+}
+.top_text_part {
+  font: 700 4em/1 "Oswald", sans-serif;
+  letter-spacing: 0;
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+
+  /* Clip Background Image */
+  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Animate Background Image */
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 80s linear infinite;
+
+  /* Activate hardware acceleration for smoother animations */
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+}
+
+/* Animate Background Image */
+@-webkit-keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Search Button */
+.btn_style {
+  color: white;
+  background-color: #282829;
+  border-radius: 3px;
+  border: 1px solid #ee5100;
+  padding: 8px 20px;
+}
+.btn_style:hover {
+  background-color: #ee5100;
+}
+.btn_learn {
+  color: white;
+  background-color: #ee5100;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+/* Cards */
+.card_style:hover {
+  box-shadow: 5px 5px 10px #ee5100;
+}
+
+/* Footer */
+.footer_style {
+  background-color: #ee5100;
+  position: relative;
+  width: 100%;
+  bottom: 0;
 }

@@ -3,7 +3,6 @@ const searchResults = document.getElementById("search-results");
 const searchButton = () => {
   const inputValue = document.getElementById("input-value");
   const errorText = document.getElementById("error-text");
-
   const searchText = inputValue.value;
 
   //condition executes when search button press with empty value
@@ -44,7 +43,8 @@ const phonesDisplay = (phoneDatas) => {
     if (count <= 20) {
       const div = document.createElement("div");
       div.classList.add("col-lg-4");
-      div.classList.add("mb-3");
+      div.classList.add("col-12");
+      div.classList.add("mb-5");
       div.classList.add("card-group");
       div.innerHTML = `
                           <div class="card border-0 rounded-3 card_style">
@@ -54,7 +54,7 @@ const phonesDisplay = (phoneDatas) => {
                                   <p class="card-text">${phoneData.brand}</p>
                               </div>
                               <div class="mx-auto py-4">
-                                <button onclick="phoneDetails('${phoneData.slug}')" class="btn btn-primary">See Details</button>
+                                <button onclick="phoneDetails('${phoneData.slug}')" class="btn_learn">Learn More</button>
                               </div>
                           </div>
                       `;
@@ -71,13 +71,17 @@ const phoneDetails = (id) => {
       const productDetails = data.data;
       console.log(productDetails);
       const div = document.createElement("div");
+      div.classList.add("bg-light");
+      div.classList.add("rounded-3");
+      div.classList.add("p-5");
+      div.classList.add("mb-5");
       searchResults.innerHTML = "";
       div.innerHTML = `
-                <div class="row">
-                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="row mb-5">
+                    <div class="col-lg-6 col-12 d-flex justify-content-center align-items-center">
                         <img src="${productDetails.image}" class="img-fluid" width='300px' alt="...">
                     </div>
-                    <div class="col-lg-6 d-flex justify-content-center">
+                    <div class="col-lg-6 col-12 d-flex justify-content-center">
                         <div>
                             <h5 class="card-title">${productDetails.name}</h5>
                             <p class="card-text">${productDetails.brand}</p>
