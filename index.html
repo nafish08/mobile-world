@@ -15,29 +15,45 @@
     />
   </head>
   <body>
-    <h2 class="text-center">Find your Favorite Phones</h2>
+    <!-- Header start -->
+    <header class="container">
+      <!-- Top Text -->
+      <section>
+        <h2 class="text-center my-4">Find Your Desired Phones</h2>
+      </section>
+      <!-- For search -->
+      <section class="mb-4">
+        <div class="d-flex">
+          <input
+            id="input-value"
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button
+            onclick="searchButton()"
+            class="btn btn-outline-success"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+      </section>
+      <!-- For error show -->
+      <section>
+        <h2 id="error-text" class="text-primary text-center"></h2>
+      </section>
+    </header>
 
-    <div class="container">
-      <div class="d-flex">
-        <input
-          id="input-value"
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button
-          onclick="searchButton()"
-          class="btn btn-outline-success"
-          type="submit"
-        >
-          Search
-        </button>
-      </div>
-      <h2 id="error-text" class="text-primary text-center"></h2>
+    <!-- Main start -->
+    <main class="container">
+      <section class="">
+        <div id="search-results" class="row"></div>
+      </section>
+    </main>
 
-      <div id="search-results" class="row"></div>
-    </div>
+    <!-- Custom JavaScript   -->
     <script src="main.js"></script>
 
     <!-- JavaScript Bundle with Popper -->

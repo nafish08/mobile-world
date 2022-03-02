@@ -36,7 +36,7 @@ const searchButton = () => {
 
 //Phone display function
 const phonesDisplay = (phoneDatas) => {
-  phoneDatas = phonephoneData.data;
+  phoneDatas = phoneDatas.data;
   let count = 0;
 
   for (const phoneData of phoneDatas) {
@@ -44,14 +44,17 @@ const phonesDisplay = (phoneDatas) => {
     if (count <= 20) {
       const div = document.createElement("div");
       div.classList.add("col-lg-4");
-      div.classList.add("mb-5");
+      div.classList.add("mb-3");
+      div.classList.add("card-group");
       div.innerHTML = `
-                          <div class="phones">
-                              <img src="${phoneData.image}" class="img-fluid" alt="...">
-                              <div class="phones-body">
-                                  <h5 class="phones-title">${phoneData.phone_name}</h5>
-                                  <p class="phones-text">${phoneData.brand}</p>
-                                  <button onclick="phoneDetails('${phoneData.slug}')" class="btn btn-primary">See Details</button>
+                          <div class="card">
+                              <img src="${phoneData.image}" class="m-3 img-fluid" alt="...">
+                              <div class="card-body">
+                                  <h5 class="card-title">${phoneData.phone_name}</h5>
+                                  <p class="card-text">${phoneData.brand}</p>
+                              </div>
+                              <div class="mx-auto py-4">
+                                <button onclick="phoneDetails('${phoneData.slug}')" class="btn btn-primary">See Details</button>
                               </div>
                           </div>
                       `;
@@ -70,19 +73,21 @@ const phoneDetails = (id) => {
       const div = document.createElement("div");
       searchResults.innerHTML = "";
       div.innerHTML = `
-          
-              <div class="card flex">
-                      <img src="${productDetails.image}" class="img-fluid" alt="...">
-                      <div class="card-body">
-                          <h5 class="card-title">${productDetails.name}</h5>
-                          <p class="card-text">${productDetails.brand}</p>
-                          <p class="card-text">${productDetails.releaseDate}</p>
-                          <p class="card-text">${productDetails.mainFeatures.storage}</p>
-                          <p class="card-text">${productDetails.mainFeatures.sensors}</p>
-                          <p class="card-text">${productDetails.slug}</p>
-                      </div>
-                  </div>
-                  
+                <div class="row">
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                        <img src="${productDetails.image}" class="img-fluid" width='300px' alt="...">
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-center">
+                        <div>
+                            <h5 class="card-title">${productDetails.name}</h5>
+                            <p class="card-text">${productDetails.brand}</p>
+                            <p class="card-text">${productDetails.releaseDate}</p>
+                            <p class="card-text">${productDetails.mainFeatures.storage}</p>
+                            <p class="card-text">${productDetails.mainFeatures.sensors}</p>
+                            <p class="card-text">${productDetails.slug}</p>
+                        </div>
+                    </div>
+                </div> 
               `;
       searchResults.appendChild(div);
     });
