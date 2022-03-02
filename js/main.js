@@ -7,6 +7,7 @@ const searchButton = () => {
 
   //condition executes when search button press with empty value
   if (searchText == "") {
+    document.getElementById("landing-img").innerHTML = "";
     document.getElementById("pagination-btn").innerHTML = "";
     errorText.innerHTML = `
           <img src="img/error.png" class="error_image">
@@ -61,6 +62,7 @@ const searchButton = () => {
         }
         //condition executes when data not found in the API
         else {
+          document.getElementById("landing-img").innerHTML = "";
           document.getElementById("pagination-btn").innerHTML = "";
           errorText.innerHTML = `
           <img src="img/error.png" class="error_image">
@@ -116,7 +118,7 @@ const phoneDetails = (id) => {
       div.classList.add("bg-light");
       div.classList.add("rounded-3");
       div.classList.add("py-3");
-      div.classList.add("my-5");
+      div.classList.add("mb-5");
       searchResults.innerHTML = "";
       div.innerHTML = `
                 <div class="row mb-5">
