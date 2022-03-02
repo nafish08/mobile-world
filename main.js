@@ -59,3 +59,31 @@ const phonesDisplay = (phoneDatas) => {
     }
   }
 };
+
+//Phone details function
+const phoneDetails = (id) => {
+  fetch(` https://openapi.programming-hero.com/api/phone/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      const productDetails = data.data;
+      console.log(productDetails);
+      const div = document.createElement("div");
+      searchResults.innerHTML = "";
+      div.innerHTML = `
+          
+              <div class="card flex">
+                      <img src="${productDetails.image}" class="img-fluid" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title">${productDetails.name}</h5>
+                          <p class="card-text">${productDetails.brand}</p>
+                          <p class="card-text">${productDetails.releaseDate}</p>
+                          <p class="card-text">${productDetails.mainFeatures.storage}</p>
+                          <p class="card-text">${productDetails.mainFeatures.sensors}</p>
+                          <p class="card-text">${productDetails.slug}</p>
+                      </div>
+                  </div>
+                  
+              `;
+      searchResults.appendChild(div);
+    });
+};
