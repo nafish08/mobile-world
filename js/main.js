@@ -48,12 +48,12 @@ const phonesDisplay = (phoneDatas) => {
       div.classList.add("card-group");
       div.innerHTML = `
                           <div class="card border-0 rounded-3 card_style">
-                              <img src="${phoneData.image}" class="m-3 img-fluid" alt="...">
+                              <img src="${phoneData.image}" class="m-3 mx-auto img-fluid w-75" alt="...">
                               <div class="card-body">
                                   <h5 class="card-title">${phoneData.phone_name}</h5>
                                   <p class="card-text">${phoneData.brand}</p>
                               </div>
-                              <div class="mx-auto py-4">
+                              <div class="mx-auto pb-4">
                                 <button onclick="phoneDetails('${phoneData.slug}')" class="btn_learn">Learn More</button>
                               </div>
                           </div>
@@ -73,21 +73,33 @@ const phoneDetails = (id) => {
       const div = document.createElement("div");
       div.classList.add("bg-light");
       div.classList.add("rounded-3");
-      div.classList.add("p-5");
-      div.classList.add("mb-5");
+      div.classList.add("py-3");
+      div.classList.add("my-5");
       searchResults.innerHTML = "";
       div.innerHTML = `
                 <div class="row mb-5">
-                    <div class="col-lg-6 col-12 d-flex justify-content-center align-items-center">
-                        <img src="${productDetails.image}" class="img-fluid" width='300px' alt="...">
+                    <div class="col-lg-6 col-sm-12 col-12 d-flex justify-content-center align-items-center mb-3">
+                        <img src="${
+                          productDetails.image
+                        }" class="img-fluid" alt="...">
                     </div>
-                    <div class="col-lg-6 col-12 d-flex justify-content-center">
-                        <div>
+                    <div class="col-lg-6 col-sm-12 col-12">
+                        <div class="container-fluid p-0 m-0 w-75 details_text">
                             <h5 class="card-title">${productDetails.name}</h5>
                             <p class="card-text">${productDetails.brand}</p>
-                            <p class="card-text">${productDetails.releaseDate}</p>
-                            <p class="card-text">${productDetails.mainFeatures.storage}</p>
-                            <p class="card-text">${productDetails.mainFeatures.sensors}</p>
+                            <p class="fw-bold text-uppercase">Launch</p>
+                            <p class="card-text">${
+                              productDetails?.releaseDate ||
+                              "Release Date Not Found"
+                            }</p>
+                            <p class="fw-bold text-uppercase">Memory</p>
+                            <p class="card-text">${
+                              productDetails.mainFeatures.storage
+                            }</p>
+                            <p class="fw-bold text-uppercase">Features</p>
+                            <p class="card-text">${
+                              productDetails.mainFeatures.sensors
+                            }</p>
                             <p class="card-text">${productDetails.slug}</p>
                         </div>
                     </div>

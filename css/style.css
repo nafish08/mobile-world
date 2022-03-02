@@ -1,6 +1,10 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Lobster&family=Manrope:wght@700&family=Poppins&family=Roboto:wght@100&family=Yeseva+One&display=swap");
+
 /* Utilities */
 .bg_color {
   background-color: #282829;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Top Text Animation */
@@ -54,12 +58,13 @@
   background-color: #ee5100;
   border: none;
   border-radius: 3px;
-  padding: 10px 20px;
+  padding: 5px 15px;
 }
 
 /* Cards */
 .card_style:hover {
   box-shadow: 5px 5px 10px #ee5100;
+  transform: scale(1.1);
 }
 
 /* Footer */
@@ -68,4 +73,8 @@
   position: relative;
   width: 100%;
   bottom: 0;
+}
+
+.details_text {
+  word-wrap: break-word;
 }
